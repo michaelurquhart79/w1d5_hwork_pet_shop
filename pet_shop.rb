@@ -19,3 +19,7 @@ def increase_pets_sold(pet_shop, additional_pets_sold)
   # pets_sold(pet_shop) += additional_pets_sold
   # I thought the above commented-out line would work but it doesn't
 end
+
+def stock_count(pet_shop)
+  return pet_shop[:pets].count
+end
