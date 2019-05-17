@@ -52,3 +52,8 @@ def remove_pet_by_name(pet_shop, pet_name)
   full_pet_array = pet_shop[:pets]
   full_pet_array.delete_if {|pet| pet[:name] == pet_name}
 end
+
+def add_pet_to_stock(pet_shop, new_pet)
+  full_pet_array = pet_shop[:pets]
+  full_pet_array.push(new_pet)
+end
