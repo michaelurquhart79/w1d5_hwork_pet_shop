@@ -47,3 +47,8 @@ def find_pet_by_name(pet_shop, pet_name)
   end
   return
 end
+
+def remove_pet_by_name(pet_shop, pet_name)
+  full_pet_array = pet_shop[:pets]
+  full_pet_array.delete_if {|pet| pet[:name] == pet_name}
+end
