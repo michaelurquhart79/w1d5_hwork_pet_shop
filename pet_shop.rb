@@ -84,9 +84,13 @@ end
 
 def sell_pet_to_customer(pet_shop, pet, customer)
 
-  if (pet != nil)
-    # find cost of pet
-    pet_cost = pet[:price]
+  # get cost of pet (if it exists)
+  pet_cost = pet[:price] if (pet != nil)
+
+  # get customer funds
+  customer_funds = customer_cash(customer)
+
+  if ( (pet != nil) && (pet_cost < customer_funds) )
 
     # remove cash from customer
     remove_customer_cash(customer, pet_cost)
