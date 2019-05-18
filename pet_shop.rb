@@ -84,22 +84,24 @@ end
 
 def sell_pet_to_customer(pet_shop, pet, customer)
 
-  # find cost of pet
-  pet_cost = pet[:price]
+  if (pet != nil)
+    # find cost of pet
+    pet_cost = pet[:price]
 
-  # remove cash from customer
-  remove_customer_cash(customer, pet_cost)
+    # remove cash from customer
+    remove_customer_cash(customer, pet_cost)
 
-  # add cash to pet_shop
-  add_or_remove_cash(pet_shop, pet_cost)
+    # add cash to pet_shop
+    add_or_remove_cash(pet_shop, pet_cost)
 
-  # remove pet from pet_shop
-  remove_pet_by_name(pet_shop, pet[:name])
+    # remove pet from pet_shop
+    remove_pet_by_name(pet_shop, pet[:name])
 
-  # add pet to customer
-  add_pet_to_customer(customer, pet)
+    # add pet to customer
+    add_pet_to_customer(customer, pet)
 
-  # increase pets sold by 1
-  increase_pets_sold(pet_shop, 1)
+    # increase pets sold by 1
+    increase_pets_sold(pet_shop, 1)
+  end
 
 end
